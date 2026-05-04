@@ -1113,8 +1113,12 @@ static bool ProcessGetpath()
             if (pid = GetPID(L"StarRail.exe"))
                 break;
         }
+        else
+        {
+        if (pid = GetPID(L"PetitPlanet.exe"))
+            break;
         NtSleep(200);
-    }
+     }
     HANDLE hProcess = OpenProcess_Internal(PROCESS_QUERY_LIMITED_INFORMATION | SYNCHRONIZE | PROCESS_TERMINATE, pid);
     if (!hProcess)
     {
